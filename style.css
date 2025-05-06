@@ -1,0 +1,207 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #000000; /* Black background */
+    color: #f4f4f4; /* Light gray text for readability */
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden; /* Clear floats */
+    padding: 0 20px;
+}
+
+/* Header Styling */
+header {
+    background-color: #111; /* Slightly lighter black for header */
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #333; /* Subtle border */
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #fff; /* White logo text */
+}
+
+header nav ul {
+    list-style: none;
+}
+
+header nav ul li {
+    display: inline;
+    margin-left: 25px;
+}
+
+header nav ul li a {
+    color: #ccc; /* Lighter gray for nav links */
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #fff;
+}
+
+/* Main Content - Topics Section */
+.topics-section {
+    padding: 4rem 0;
+}
+
+.topic-item {
+    display: flex;
+    align-items: center; /* Vertically align items */
+    margin-bottom: 4rem;
+    background-color: #1a1a1a; /* Dark gray background for topic cards */
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.05); /* Subtle white glow */
+}
+
+.topic-item:last-child {
+    margin-bottom: 0;
+}
+
+.topic-image {
+    flex: 1; /* Takes up 1 part of the space */
+    margin-right: 2rem;
+}
+
+.topic-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    display: block;
+}
+
+.topic-content {
+    flex: 1.5; /* Takes up 1.5 parts of the space, giving more room for text */
+}
+
+.topic-content h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.topic-content p {
+    font-size: 1rem;
+    color: #ddd; /* Slightly darker gray for paragraph text */
+    margin-bottom: 0.75rem;
+}
+
+.topic-content p strong {
+    color: #fff; /* Make strong text stand out */
+    font-weight: 700;
+}
+
+/* Alternate layout for visual variety */
+.topic-item.alt-layout {
+    flex-direction: row-reverse; /* Reverses the order of image and content */
+}
+
+.topic-item.alt-layout .topic-image {
+    margin-right: 0;
+    margin-left: 2rem;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #111;
+    color: #888;
+    text-align: center;
+    padding: 2rem 0;
+    border-top: 1px solid #333;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 992px) {
+    .topic-content h2 {
+        font-size: 1.8rem;
+    }
+}
+
+
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header .logo {
+        margin-bottom: 0.5rem;
+    }
+    
+    header nav ul {
+        margin-top: 1rem;
+    }
+
+    header nav ul li {
+        margin: 0 10px;
+    }
+
+    .topic-item,
+    .topic-item.alt-layout {
+        flex-direction: column; /* Stack image and text vertically */
+        text-align: center;
+    }
+
+    .topic-image,
+    .topic-item.alt-layout .topic-image {
+        margin-right: 0;
+        margin-left: 0;
+        margin-bottom: 1.5rem; /* Space between image and text */
+        max-width: 80%; /* Prevent image from being too wide */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .topic-content {
+        flex: 1; /* Take full width when stacked */
+    }
+}
+
+@media (max-width: 480px) {
+    header .logo {
+        font-size: 1.5rem;
+    }
+
+    header nav ul li a {
+        font-size: 0.9rem;
+    }
+
+    .topic-content h2 {
+        font-size: 1.6rem;
+    }
+
+    .topic-content p {
+        font-size: 0.95rem;
+    }
+
+    .topics-section {
+        padding: 2.5rem 0;
+    }
+
+    .topic-item {
+        padding: 1.5rem;
+    }
+}
