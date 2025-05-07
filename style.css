@@ -7,8 +7,8 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #000000; /* Black background */
-    color: #f4f4f4; /* Light gray text for readability */
+    background-color: #000000;
+    color: #f4f4f4;
     line-height: 1.6;
 }
 
@@ -16,15 +16,15 @@ body {
     width: 90%;
     max-width: 1200px;
     margin: auto;
-    overflow: hidden; /* Clear floats */
+    overflow: hidden;
     padding: 0 20px;
 }
 
-/* Header Styling */
+/* --- CONSOLIDATED HEADER STYLING --- */
 header {
-    background-color: #111; /* Slightly lighter black for header */
-    padding: 1.5rem 0;
-    border-bottom: 1px solid #333; /* Subtle border */
+    background-color: #111;
+    padding: 1rem 0; /* Adjusted padding a bit from original 1.5rem */
+    border-bottom: 1px solid #333;
 }
 
 header .container {
@@ -33,23 +33,44 @@ header .container {
     align-items: center;
 }
 
-header .logo {
-    font-size: 1.8rem;
+/* Styles for the logo container in the header */
+.logo-container {
+    display: flex;      /* Aligns image and text side-by-side */
+    align-items: center; /* Vertically aligns image and text */
+}
+
+.header-logo-img {
+    max-height: 28px; /* << SET YOUR DESIRED SMALLER HEIGHT HERE (e.g., 25px, 28px, 30px) */
+    width: auto;         /* Maintain aspect ratio */
+    margin-right: 10px;  /* Space between logo image and text - adjust as needed */
+    vertical-align: middle; /* Helps align with the text line */
+}
+
+.logo-text {
+    font-size: 1.6rem;   /* Adjust font size of "OLO Group Political Consulting" if needed */
     font-weight: 700;
-    color: #fff; /* White logo text */
+    color: #fff;
+    margin: 0;           /* Remove default h1 margin */
+    line-height: 1;      /* Can help with vertical alignment next to an image */
 }
 
 header nav ul {
     list-style: none;
+    margin: 0; /* Ensure no default margin pushes things around */
+    padding: 0; /* Ensure no default padding */
 }
 
 header nav ul li {
     display: inline;
-    margin-left: 25px;
+    margin-left: 25px; /* Spacing for nav items */
+}
+
+header nav ul li:first-child {
+    margin-left: 0; /* No left margin for the first nav item if it looks better */
 }
 
 header nav ul li a {
-    color: #ccc; /* Lighter gray for nav links */
+    color: #ccc;
     text-decoration: none;
     font-size: 1rem;
     font-weight: 400;
@@ -59,20 +80,23 @@ header nav ul li a {
 header nav ul li a:hover {
     color: #fff;
 }
+/* --- END OF CONSOLIDATED HEADER STYLING --- */
+
 
 /* Main Content - Topics Section */
 .topics-section {
     padding: 4rem 0;
 }
 
+/* ... (rest of your .topic-item, .topic-image, .topic-content CSS - keep as is if it's working) ... */
 .topic-item {
     display: flex;
-    align-items: center; /* Vertically align items */
+    align-items: center;
     margin-bottom: 4rem;
-    background-color: #1a1a1a; /* Dark gray background for topic cards */
+    background-color: #1a1a1a;
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.05); /* Subtle white glow */
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.05);
 }
 
 .topic-item:last-child {
@@ -80,7 +104,7 @@ header nav ul li a:hover {
 }
 
 .topic-image {
-    flex: 1; /* Takes up 1 part of the space */
+    flex: 1;
     margin-right: 2rem;
 }
 
@@ -92,7 +116,7 @@ header nav ul li a:hover {
 }
 
 .topic-content {
-    flex: 1.5; /* Takes up 1.5 parts of the space, giving more room for text */
+    flex: 1.5;
 }
 
 .topic-content h2 {
@@ -104,18 +128,17 @@ header nav ul li a:hover {
 
 .topic-content p {
     font-size: 1rem;
-    color: #ddd; /* Slightly darker gray for paragraph text */
+    color: #ddd;
     margin-bottom: 0.75rem;
 }
 
 .topic-content p strong {
-    color: #fff; /* Make strong text stand out */
+    color: #fff;
     font-weight: 700;
 }
 
-/* Alternate layout for visual variety */
 .topic-item.alt-layout {
-    flex-direction: row-reverse; /* Reverses the order of image and content */
+    flex-direction: row-reverse;
 }
 
 .topic-item.alt-layout .topic-image {
@@ -123,15 +146,28 @@ header nav ul li a:hover {
     margin-left: 2rem;
 }
 
+
 /* Footer Styling */
+/* Assuming you have added .footer-logo-img and potentially .footer-content to your HTML for the footer logo */
 footer {
     background-color: #111;
     color: #888;
     text-align: center;
-    padding: 2rem 0;
+    padding: 2.5rem 0; /* Increased padding for logo */
     border-top: 1px solid #333;
-    font-size: 0.9rem;
 }
+
+.footer-logo-img {
+    max-height: 70px; /* Adjust as needed */
+    width: auto;
+    margin-bottom: 1rem;
+}
+
+footer p {
+    font-size: 0.9rem;
+    margin: 0;
+}
+
 
 /* Responsive Design Adjustments */
 @media (max-width: 992px) {
@@ -140,17 +176,20 @@ footer {
     }
 }
 
-
 @media (max-width: 768px) {
     header .container {
         flex-direction: column;
         text-align: center;
     }
 
-    header .logo {
-        margin-bottom: 0.5rem;
+    .logo-container { /* When header stacks, ensure logo container is also centered or full width */
+        margin-bottom: 0.5rem; /* Space below logo/title block if stacked */
+        /* Or perhaps make it centered if you want the logo+text block centered */
+        /* justify-content: center; */
     }
-    
+
+    /* The old 'header .logo' rule for margin is no longer needed if .logo class isn't on the h1 directly or if .logo-container handles spacing */
+
     header nav ul {
         margin-top: 1rem;
     }
@@ -161,7 +200,7 @@ footer {
 
     .topic-item,
     .topic-item.alt-layout {
-        flex-direction: column; /* Stack image and text vertically */
+        flex-direction: column;
         text-align: center;
     }
 
@@ -169,20 +208,25 @@ footer {
     .topic-item.alt-layout .topic-image {
         margin-right: 0;
         margin-left: 0;
-        margin-bottom: 1.5rem; /* Space between image and text */
-        max-width: 80%; /* Prevent image from being too wide */
+        margin-bottom: 1.5rem;
+        max-width: 80%;
         margin-left: auto;
         margin-right: auto;
     }
 
     .topic-content {
-        flex: 1; /* Take full width when stacked */
+        flex: 1;
     }
 }
 
 @media (max-width: 480px) {
-    header .logo {
-        font-size: 1.5rem;
+    /* The old 'header .logo' font-size rule can be removed if .logo-text is used */
+    .logo-text {
+        font-size: 1.2rem; /* Adjust title text size for very small screens */
+    }
+    .header-logo-img {
+        max-height: 24px; /* Further reduce logo size for very small screens */
+        margin-right: 8px;
     }
 
     header nav ul li a {
@@ -204,56 +248,8 @@ footer {
     .topic-item {
         padding: 1.5rem;
     }
-}
-/* ... your existing CSS ... */
 
-/* Header Styling */
-header {
-    background-color: #111;
-    padding: 1rem 0; /* Adjusted padding a bit */
-    border-bottom: 1px solid #333;
+    .footer-logo-img {
+        max-height: 50px;
+    }
 }
-
-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/* New styles for the logo container in the header */
-.logo-container {
-    display: flex; /* Aligns image and text side-by-side */
-    align-items: center; /* Vertically aligns image and text */
-}
-
-.header-logo-img {
-    max-height: 150px; /* Adjust as needed for your logo's size in the header */
-    width: auto;
-    margin-right: 20px; /* Space between logo image and text */
-}
-.logo-text {
-    font-size: 1.6rem; /* Or your current font size */
-    font-weight: 700;
-    color: #fff;
-    margin: 0;
-    line-height: 1; /* This can sometimes help align text with an adjacent image */
-}
-
-/* And ensure the container aligns items centrally */
-.logo-container {
-    display: flex;
-    align-items: center; /* This is important for vertical alignment */
-}
-.logo-text { /* Changed from 'header .logo' to be more specific */
-    font-size: 1.6rem; /* You might want to adjust this */
-    font-weight: 700;
-    color: #fff;
-    margin: 0; /* Remove default h1 margin */
-}
-
-header nav ul {
-    list-style: none;
-    margin: 0; /* Ensure no default margin pushes things around */
-}
-
-/* ... rest of your header nav styling ... */
