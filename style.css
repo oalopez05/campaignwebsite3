@@ -205,3 +205,43 @@ footer {
         padding: 1.5rem;
     }
 }
+/* ... your existing CSS ... */
+
+/* Header Styling */
+header {
+    background-color: #111;
+    padding: 1rem 0; /* Adjusted padding a bit */
+    border-bottom: 1px solid #333;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* New styles for the logo container in the header */
+.logo-container {
+    display: flex; /* Aligns image and text side-by-side */
+    align-items: center; /* Vertically aligns image and text */
+}
+
+.header-logo-img {
+    max-height: 50px; /* Adjust as needed for your logo's size in the header */
+    width: auto;
+    margin-right: 15px; /* Space between logo image and text */
+}
+
+.logo-text { /* Changed from 'header .logo' to be more specific */
+    font-size: 1.6rem; /* You might want to adjust this */
+    font-weight: 700;
+    color: #fff;
+    margin: 0; /* Remove default h1 margin */
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0; /* Ensure no default margin pushes things around */
+}
+
+/* ... rest of your header nav styling ... */
