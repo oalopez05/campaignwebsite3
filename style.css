@@ -227,9 +227,9 @@ header .container {
 }
 
 .header-logo-img {
-    max-height: 28px; /* Adjust as needed for your logo's size in the header */
+    max-height: 150px; /* Adjust as needed for your logo's size in the header */
     width: auto;
-    margin-right: 10px; /* Space between logo image and text */
+    margin-right: 20px; /* Space between logo image and text */
 }
 .logo-text {
     font-size: 1.6rem; /* Or your current font size */
