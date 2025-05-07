@@ -231,7 +231,19 @@ header .container {
     width: auto;
     margin-right: 10px; /* Space between logo image and text */
 }
+.logo-text {
+    font-size: 1.6rem; /* Or your current font size */
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+    line-height: 1; /* This can sometimes help align text with an adjacent image */
+}
 
+/* And ensure the container aligns items centrally */
+.logo-container {
+    display: flex;
+    align-items: center; /* This is important for vertical alignment */
+}
 .logo-text { /* Changed from 'header .logo' to be more specific */
     font-size: 1.6rem; /* You might want to adjust this */
     font-weight: 700;
