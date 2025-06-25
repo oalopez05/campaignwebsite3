@@ -40,7 +40,7 @@ header .container {
 }
 
 .header-logo-img {
-    max-height: 28px; /* << SET YOUR DESIRED SMALLER HEIGHT HERE (e.g., 25px, 28px, 30px) */
+    max-height: 165px; /* << SET YOUR DESIRED SMALLER HEIGHT HERE (e.g., 25px, 28px, 30px) */
     width: auto;         /* Maintain aspect ratio */
     margin-right: 10px;  /* Space between logo image and text - adjust as needed */
     vertical-align: middle; /* Helps align with the text line */
