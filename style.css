@@ -225,7 +225,7 @@ footer p {
         font-size: 1.2rem; /* Adjust title text size for very small screens */
     }
     .header-logo-img {
-        max-height: 45px; /* Further reduce logo size for very small screens */
+        max-height: 65px; /* Further reduce logo size for very small screens */
         margin-right: 8px;
     }
 
