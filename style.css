@@ -252,8 +252,6 @@ footer {
 .logo-gallery img {
     height: 75px;
     margin: 0 15px;
-    /* This filter makes logos white/light to fit the dark background */
-    filter: grayscale(100%) brightness(500%);
     opacity: 0.7;
     transition: opacity 0.3s ease;
 }
